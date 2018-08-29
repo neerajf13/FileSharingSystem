@@ -1,0 +1,37 @@
+Kindly Note : .class files are needed to start rmiregistry
+
+Following are the steps to run and test the software on windows:
+
+1) store the jar file from where you would like to run program (ROOT FOLDER)
+   Example "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\PA2"
+
+2) create directory for server anywhere on the system
+   Example "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\servers"
+
+3) create directory for client anywhere on the system
+   Example C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\client
+
+4) go to path where pa2.jar is located that is as mentioned below:
+"C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\PA2" and run command start rmiregistry(make sure .class files are present)
+
+5) start the server from where pa2.jar is located
+   current directory: "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\PA2"
+   Example: java -cp pa2.jar server start 8000
+
+6) go to client folder and set environment variable
+   current directory - "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\client"
+   run command : set PA2_SERVER=localhost:8000
+
+7) go back to root folder "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\PA2"
+   run the following commands to run the operations
+
+a)	download - java -cp pa2.jar client download "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\server\filename.extension" "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\client\filename.extension"
+b)	upload - java -cp pa2.jar client upload "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\client\filename.extension" "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\server\filename.extension"
+c)	remove file - java -cp pa2.jar client rm "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\server\filename.extension" 
+d)	remove directory - java -cp pa2.jar client rmdir "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\server\folder"
+e)	create directory - java -cp pa2.jar client mkdir "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\server\folder"
+f)	shutdown server – java -cp pa2.jar client shutdown
+g)	To check for multithreading create client1 folder as in step 3 and set environment variable shown as in step 6 and run two clients simultaneously
+h)      to list files in directory java -cp pa2.jar client dir "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\2\neeraj\v4\server"   
+
+Note : Once the server is shutdown make sure rmiregistry cmd window is still running only then proceed further

@@ -1,0 +1,32 @@
+Following are the steps to run and test the software on windows:
+
+1) store the jar file from where you would like to run program (ROOT FOLDER)
+   Example "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1"
+
+2) create directory for server anywhere on the system
+   Example "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\server"
+
+3) create directory for client anywhere on the system
+   Example C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\client1
+
+4) go to path where pa1.jar is located that is "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1" in this case
+
+5) start the server from where pa1.jar is located
+   current directory: "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1"
+   Example: java - cp pa1.jar server start 8000
+
+6) go to client1 folder and set environment variable
+   current directory - "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\client1"
+   run command : set PA1_SERVER=localhost:8000
+
+7) go back to root folder "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1"
+   run the following commands to run the operations
+
+a)	download - java -cp pa1.jar client download "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1\server\filename.extension" "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1\client1\filename.extension"
+b)	upload - java -cp pa1.jar client upload "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1\client1\filename.extension" "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1\server\filename.extension"
+c)	remove file - java -cp pa1.jar client rm "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1\server\filename.extension" 
+d)	remove directory - java -cp pa1.jar client rmdir "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1\server\folder"
+e)	create directory - java -cp pa1.jar client mkdir "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1\server\folder"
+f)	shutdown server – java -cp pa1.jar client shutdown
+g)	To check for multithreading create client2 folder as in step 3 and set environment variable shown as in step 3 and run two clients simultaneously
+h)      to list files in directory java -cp pa1.jar client dir "C:\Users\Neeraj Fernandes\Desktop\gmu\swe622\PA\1\NF\final\v1.6\pa1\server"   
